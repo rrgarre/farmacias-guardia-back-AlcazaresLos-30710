@@ -17,12 +17,9 @@ const scrapFunctions = require('../utils/scrapFunctionsAlcazares30710')
     // Sincroniza el modelo con la base de datos
     // Utiliza { force: true } solo en desarrollo para re-crear la tabla
     // await Farmacia.sync() 
-    console.log('11111111111111111')
     await GuardiaAlcazares30710.sync({ force: true }) 
-    console.log('222222222222222')
 
     resultadoMix.map(res => {
-    console.log('333333333333')
       
       // en las listas de dia y noche me quedo con las IDs de las farmacias
       // const fondoDiaIds = res.fondoDia.map(elem => elem.id)

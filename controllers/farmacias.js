@@ -1,7 +1,7 @@
 const farmaciasRouter = require('express').Router()
 const puppeteer = require('puppeteer')
-const farmacias = require('../utils/farmacias-Lucena-14900').farmacias_lucena
-const GuardiaLucena14900 = require('../models/guardiaLucena14900')
+// const farmacias = require('../utils/farmacias-Lucena-14900').farmacias_lucena
+// const GuardiaLucena14900 = require('../models/guardiaLucena14900')
 // Objeto para operaciones de filtrado en BBDD
 const {Op} = require('sequelize')
 

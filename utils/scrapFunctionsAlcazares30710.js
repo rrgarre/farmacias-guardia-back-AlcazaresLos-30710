@@ -1,12 +1,15 @@
 // const { isObjectIdOrHexString } = require('mongoose')
 const puppeteer = require('puppeteer')
 // listado de farmacias para cruzar con Scrapping
-const farmacias = require('../utils/farmacias-Lucena-14900').farmacias_lucena
+const farmacias = require('./farmacias-Alcazares-30710').farmacias_alcazares_30710
+const guardias = require('./guardias-Alcazares-30710-2024').guardias_alcazares_30710_2024
+
 
 ///////////////// Posible función para obtener un año concreto //////////////////////////////
 // NO ESCRITA...
 const getYear = async () => {
-  return 'getYear(): farmacias de guardia del año XXXX'
+  // return 'getYear(): farmacias de guardia del año 2024'
+  return guardias
 }
 
 ///////////////// Función para obtener 1 + 'extraDays' días de guardia desde hoy ///////////////
@@ -89,7 +92,7 @@ const getSinceToday = async (extraDays) => {
   const resultadoMix = data.map(elem => { 
     // Cambiamos el array de nombres de farmacia conforme llegan del scrapeo
     // Por las IDS de las farmacias en nuestra BBDD
-    // ** Si quitamos el '.id' del finally. Tendriamos toda la información de la farmacia en un objeto
+    // ** Si quitamos el '.id' del final. Tendriamos toda la información de la farmacia en un objeto
     //    pero como este Array resultado debemos pasarlo a String por no poder almacenar arrays en la BBDD,
     //    Mejor nos quedamos sólo con las IDS y ya en los controllers reconstruimos con la info completa de 
     //    cada farmacia antes de SERVIR los datos

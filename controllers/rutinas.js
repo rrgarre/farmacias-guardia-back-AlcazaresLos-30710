@@ -1,54 +1,33 @@
 const rutinasRouter = require('express').Router()
-const puppeteer = require('puppeteer')
-const farmacias = require('../utils/farmacias-Lucena-14900').farmacias_lucena
-const { Sequelize, DataTypes } = require('sequelize')
-const GuardiaLucena14900 = require('../models/guardiaLucena14900')
-const scrapFunctionsLucena14900 = require('../utils/scrapFunctionsLucena14900')
+const GuardiaAlcazares30710 = require('../models/guardiaAlcazares30710')
+const scrapFunctions = require('../utils/scrapFunctionsAlcazares30710')
 
-rutinasRouter.get('/Lucena-14900/:dias', async (request, response) => {
+// rutinasRouter.get('/Alcazares-30710/:dias', async (request, response) => {
+  rutinasRouter.get('/Alcazares-30710/', async (request, response) => {
 
-  // const extraDays = 99
-  const extraDays = parseInt(request.params.dias)
+  //Esta linea necesita endpoint con parametro
+  // const extraDays = parseInt(request.params.dias)
 
-  const resultadoMix = await scrapFunctionsLucena14900.getSinceToday(extraDays)
-
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////// EJEMPLO USO SSBB /////////////////////////////////////////
-  //////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  // try {
-  //   // Sincroniza el modelo con la base de datos
-  //   // Utiliza { force: true } solo en desarrollo para re-crear la tabla
-  //   // await Farmacia.sync() 
-  //   await Farmacia.sync({ force: true }) 
-
-  //   // Crea un usuario de ejemplo
-  //   await Farmacia.create({ name: 'Rafa Dev2', email: 'rrgarre@gsd.vom' })
-
-  //   // Consulta todos los usuarios
-  //   const users = await Farmacia.findAll()
-  //   console.log('Usuarios encontrados:', JSON.stringify(users, null, 2))
-  // } catch (error) {
-  //   console.error('Error al conectar a la base de datos:', error)
-  // } finally {
-  //   // Cierra la conexión al finalizar
-  //   // await sequelize.close()
-  // }
-  //////////////////////////////////////////////////////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Llamada a la herramienta de Scrapping.
+  // Además realiza el MATCH de farmacias con info de guardia para poner las IDS en los fondoDias y fondoNoche
+  // const resultadoMix = await scrapFunctions.getSinceToday(extraDays)
+  const resultadoMix = await scrapFunctions.getYear()
 
   try {
     // Sincroniza el modelo con la base de datos
     // Utiliza { force: true } solo en desarrollo para re-crear la tabla
     // await Farmacia.sync() 
-    await GuardiaLucena14900.sync({ force: true }) 
+    console.log('11111111111111111')
+    await GuardiaAlcazares30710.sync({ force: true }) 
+    console.log('222222222222222')
 
     resultadoMix.map(res => {
+    console.log('333333333333')
+      
       // en las listas de dia y noche me quedo con las IDs de las farmacias
       // const fondoDiaIds = res.fondoDia.map(elem => elem.id)
       // const fondoNocheIds = res.fondoNoche.map(elem => elem.id)
-      GuardiaLucena14900.create({
+      GuardiaAlcazares30710.create({
         ciudad: res.ciudad,
         fecha: res.fecha,
         fechaFormateada: res.fechaFormateada,

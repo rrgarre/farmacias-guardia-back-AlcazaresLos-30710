@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize')
 const sequelize = require('../database')
 
 // Define un modelo para una tabla de ejemplo
-const GuardiaLucena14900 = sequelize.define(
+const GuardiaAlcazares30710 = sequelize.define(
   'Farmacia', 
   {
     ciudad: {
@@ -40,8 +40,8 @@ const GuardiaLucena14900 = sequelize.define(
     }
   },
   {
-    tableName: 'guardias-Lucena-14900',
+    tableName: 'guardias-Alcazares-30710',
   },
 )
 
-module.exports = GuardiaLucena14900
+module.exports = GuardiaAlcazares30710

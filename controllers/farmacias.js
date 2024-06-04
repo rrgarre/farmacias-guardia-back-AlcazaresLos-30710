@@ -16,7 +16,7 @@ farmaciasRouter.get('/LosAlcazares30710/:dias', async (request, response) => {
   const diasResultado = parseInt(request.params.dias)
   const fechaActual = new Date()
   console.log('La fecha actual es: ', fechaActual.toISOString())
-  fechaActual.setDate(fechaActual.getDate() - 1)
+  // fechaActual.setDate(fechaActual.getDate() - 1)
   const fechaInicio = fechaActual.toISOString().split('T')[0]
   fechaActual.setDate(fechaActual.getDate() + diasResultado + 1)
   const fechaFin = fechaActual.toISOString().split('T')[0]

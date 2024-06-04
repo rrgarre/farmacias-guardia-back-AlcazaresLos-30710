@@ -11,7 +11,7 @@ const scrapFunctions = require('../utils/scrapFunctionsAlcazares30710')
   // Llamada a la herramienta de Scrapping.
   // Además realiza el MATCH de farmacias con info de guardia para poner las IDS en los fondoDias y fondoNoche
   // const resultadoMix = await scrapFunctions.getSinceToday(extraDays)
-  const resultadoMix = await scrapFunctions.getYear()
+  const resultadoMix = scrapFunctions.getYear()
 
   try {
     // Sincroniza el modelo con la base de datos

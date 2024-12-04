@@ -2,7 +2,8 @@
 const puppeteer = require('puppeteer')
 // listado de farmacias para cruzar con Scrapping
 const farmacias = require('./farmacias-Alcazares-30710').farmacias_alcazares_30710
-const guardias = require('./guardias-Alcazares-30710-2024').guardias_alcazares_30710_2024
+// const guardias = require('./datosGuardias/guardias-Alcazares-30710-2024').guardias_alcazares_30710_2024
+const guardias = require('./datosGuardias/guardias-Alcazares-30710-2024-01 a 2025-12').guardias_alcazares_30710
 
 
 ///////////////// Posible función para obtener un año concreto //////////////////////////////

@@ -3,7 +3,7 @@ const GuardiaAlcazares30710 = require('../models/guardiaAlcazares30710')
 const scrapFunctions = require('../utils/scrapFunctionsAlcazares30710')
 
 // rutinasRouter.get('/Alcazares-30710/:dias', async (request, response) => {
-  rutinasRouter.get('/Alcazares-30710/', async (request, response) => {
+rutinasRouter.get('/Alcazares-30710/', async (request, response) => {
 
   //Esta linea necesita endpoint con parametro
   // const extraDays = parseInt(request.params.dias)

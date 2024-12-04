@@ -1,4 +1,4 @@
-const guardias_alcazares_30710_2024 = [
+const guardias_alcazares_30710 = [
   {
     'ciudad':'Los Alcázares',
     'fecha':'2024-05-01T00:00:00',
@@ -3187,5 +3187,5 @@ const guardias_alcazares_30710_2024 = [
 ]
 
 module.exports = {
-  guardias_alcazares_30710_2024
+  guardias_alcazares_30710
 } 

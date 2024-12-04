@@ -20,8 +20,8 @@ farmaciasRouter.get('/LosAlcazares30710/:dias', async (request, response) => {
   // Para evitar extracciones de información
   // En lugar de duplicar este endpoint pero sin parámetro de entrada
   // Vamos a fijar el valor diasResultado por constante
-  // const diasResultado = parseInt(request.params.dias)
-  const diasResultado = 5
+  const diasResultado = parseInt(request.params.dias)
+  // const diasResultado = 5
   const fechaActual = new Date()
   console.log('La fecha actual es: ', fechaActual.toISOString())
   fechaActual.setDate(fechaActual.getDate() - 1)
